@@ -1,8 +1,40 @@
-module.exports = function toReadable() {
-  const ones = ['zero','one','two','three','four','five','six','seven','eight','nine'];
-  const teens = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
-  const tens = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
-
+module.exports = function toReadable(number) {
+  const ones = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  const teens = [
+    'ten',
+    'eleven',
+    'twelve',
+    'thirteen',
+    'fourteen',
+    'fifteen',
+    'sixteen',
+    'seventeen',
+    'eighteen',
+    'nineteen',
+  ];
+  const tens = [
+    '',
+    '',
+    'twenty',
+    'thirty',
+    'forty',
+    'fifty',
+    'sixty',
+    'seventy',
+    'eighty',
+    'ninety',
+  ];
   if (number === 0) return 'zero';
 
   let result = '';
@@ -11,7 +43,7 @@ module.exports = function toReadable() {
   const rest = number % 100;
 
   if (hundred > 0) {
-    result += ones[hundred] + ' hundred';
+    result += `${ones[hundred]} hundred`;
     if (rest > 0) result += ' ';
   }
 
